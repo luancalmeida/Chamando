@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './signup.css';
+import {AuthContext} from '../../contexts/auth'
 import logo from '../../assets/logo.png';
 import { Link } from "react-router-dom";
 
@@ -8,9 +9,14 @@ function SignIn() {
   const [nome, setNome] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signUp} = useContext(AuthContext)
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert("Cadastrado")
+    
+    if(nome != '' && email != '' && password != ''){
+      signUp(email, password, nome)
+    }
 
     
   }
