@@ -9,12 +9,12 @@ function SignIn() {
   const [nome, setNome] = useState('');
   const [password, setPassword] = useState('');
 
-  const { signUp} = useContext(AuthContext)
+  const { signUp, loadingAuth} = useContext(AuthContext)
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    if(nome != '' && email != '' && password != ''){
+    if(nome !== '' && email !== '' && password !== ''){
       signUp(email, password, nome)
     }
 
@@ -34,7 +34,7 @@ function SignIn() {
             <input type="text" placeholder="Digite seu nome" value={nome} onChange={(e) =>setNome(e.target.value) } />
             <input type="text" placeholder="Digite seu email" value={email} onChange={(e) =>setEmail(e.target.value)} />
             <input type="password" placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Cadastrar</button>
+            <button type="submit">{loadingAuth ? 'carregando...' : 'Cadastrar'}</button>
           </form>
           <Link to="/" >Já tem Conta? Acesse.</Link>
 
