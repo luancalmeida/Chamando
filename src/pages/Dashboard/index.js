@@ -1,18 +1,17 @@
-import {useContext} from 'react'
 
-import {AuthContext} from '../../contexts/auth'
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/auth';
+
 import Header from '../../components/Header';
 
-export default function Dashboard() {
-  const {signOut} = useContext(AuthContext)
+export default function Dashboard(){
+  const { signOut } = useContext(AuthContext);
 
-    return (
-      <div >
-        <Header/>
-        <h2>Usuario</h2>
-       
-      </div>
-    );
-  }
-  
-   
+  return(
+    <div>
+      <Header/>
+
+      <h1>PAGINA DASHBOARD</h1>
+    </div>
+  )
+}

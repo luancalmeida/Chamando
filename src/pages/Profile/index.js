@@ -1,3 +1,4 @@
+
 import { useState, useContext } from 'react';
 import './profile.css';
 import Header from '../../components/Header';
@@ -147,5 +148,5 @@ export default function Profile(){
 
       </div>
     </div>
-     )
- }
+  )
+}
